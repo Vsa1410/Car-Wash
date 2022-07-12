@@ -1,0 +1,13 @@
+.header{
+    background-color: #975757;
+    height: 70px;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    
+    
+}
+p {
+    color: white;
+    margin-left: 5%
+}

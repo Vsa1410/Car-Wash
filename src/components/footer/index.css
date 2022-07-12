@@ -1,0 +1,19 @@
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 1,
+  'opsz' 48;
+  color: white;
+  font-size: 35px;
+  
+  
+}
+.footer{
+    background-color: #975757;
+    display:flex;
+    justify-content: space-around;
+    align-items:center ;
+    height:70px ;
+}
