@@ -1,9 +1,10 @@
 .header{
-    background-color: #975757;
+    background-color: #0A016A;
     height: 70px;
     padding: 0;
     margin: 0;
     display: grid;
+    border-radius: 12px;
     
     
 }

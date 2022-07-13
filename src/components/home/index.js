@@ -4,6 +4,7 @@ import './index.css'
 function Home() {
     return(
         <div className="home">
+            <h3 style={{margin: "0 5% 10% 6%", fontSize:"30px"}}>Ultimas Lavagens</h3>
             <div className="lastService" style={{display:"flex", justifyContent:"space-around"}}>
                 <div className="lastService1">
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:0}}>Responsável pela Lavagem</p>

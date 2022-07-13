@@ -5,15 +5,16 @@
   'wght' 400,
   'GRAD' 1,
   'opsz' 48;
-  color: white;
+  color: #19191A;
   font-size: 35px;
   
   
 }
 .footer{
-    background-color: #975757;
+    background-color: #E8E8ED;
     display:flex;
     justify-content: space-around;
     align-items:center ;
     height:70px ;
+    border-radius: 12px;
 }

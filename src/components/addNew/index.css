@@ -1,0 +1,14 @@
+.home {
+    margin-top: 100px;
+    margin-bottom: 71px;
+}
+.input-itens{
+    margin-left: 6%;
+    margin-top: 0;
+    margin-bottom: 30px;
+    background-color: #D9DDFB;
+    width: 50%;
+    min-width: 50%;
+    border-color: transparent;
+    height: 20px;
+}

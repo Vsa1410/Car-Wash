@@ -18,6 +18,12 @@ function Footer (){
             </span>
             </Link>
 
+            <Link to={"/new"}>
+            <span class="material-symbols-outlined" style={{cursor:"pointer"}}>
+            add
+            </span>
+            </Link>
+
 
             <span class="material-symbols-outlined" style={{cursor:"pointer"}}>
             done
