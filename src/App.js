@@ -3,23 +3,40 @@ import './App.css';
 import Header from './components/header';
 import Footer from './components/footer';
 import Home from './components/home';
+import Payments from './components/payments';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  BrowserRouter,
+  Routes
 } from "react-router-dom";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <Header className="header"/>
+    <BrowserRouter>
+     <Header className="header"/>
+     <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/payments" element={<Payments/>} />
       
-      <Home className="home"/>
-      <Home className="home"/>
-      <Home className="home"/>
-      <Footer className="footer"/>
-    </div>
+    </Routes>
+     <Footer className="footer"/>
+    </BrowserRouter>
+      
+      
+      
+     
+      
+    
+
+    
+
+    
+    
   );
 }
 

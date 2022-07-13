@@ -1,16 +1,24 @@
 import React from "react";
 import './index.css'
 import Home from "../home";
+import { Link } from "react-router-dom";
 
 function Footer (){
     return(
         <div className="footer">
+            <Link to={"/"}>
             <span class="material-symbols-outlined" style={{cursor:"pointer"}}>
             home
             </span>
+            </Link>
+
+            <Link to={"/payments"}>
             <span class="material-symbols-outlined" style={{cursor:"pointer"}}>
             payments
             </span>
+            </Link>
+
+
             <span class="material-symbols-outlined" style={{cursor:"pointer"}}>
             done
             </span>

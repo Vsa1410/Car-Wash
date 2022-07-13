@@ -1,13 +1,12 @@
 import React from "react";
-import './index.css'
 
-function Home() {
+function Payments() {
     return(
         <div className="home">
             <div className="lastService" style={{display:"flex", justifyContent:"space-around"}}>
                 <div className="lastService1">
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:0}}>Responsável pela Lavagem</p>
-                    <h3 style={{margin:"0"}}>Vinicius Alves</h3>
+                    <h3 style={{margin:"0"}}>Viny Alves</h3>
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:"10px 0 0 0"}}>Data</p>
                     <h4 style={{margin:0}}>12/07/2022</h4>
                 </div>
@@ -24,4 +23,4 @@ function Home() {
         </div>
     )
 }
-export default Home
+export default Payments
