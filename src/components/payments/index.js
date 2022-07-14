@@ -3,10 +3,11 @@ import React from "react";
 function Payments() {
     return(
         <div className="home">
+            <h3 style={{margin: "0 5% 30px 6%", fontSize:"30px"}}>Ultimas Lavagens</h3>
             <div className="lastService" style={{display:"flex", justifyContent:"space-around"}}>
                 <div className="lastService1">
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:0}}>Responsável pela Lavagem</p>
-                    <h3 style={{margin:"0"}}>Viny Alves</h3>
+                    <h3 style={{margin:"0"}}>Vinicius Alves</h3>
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:"10px 0 0 0"}}>Data</p>
                     <h4 style={{margin:0}}>12/07/2022</h4>
                 </div>
