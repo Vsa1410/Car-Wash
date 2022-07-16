@@ -1,25 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import Data from "./data";
+import { file } from "../addNew/form";
 
 
 
 function Payments(){
-    const [washes, setWashers] = useState({
-        name:"Matheus",
-        date:"12/07/2022",
-        price:"R$20",
-        clientName:"Jefferson"
-    })
-        
-    return(
-        <div>
-            <h1 style={{margin: "0 5% 30px 6%", fontSize:"30px", color:"black"}}>Ultimas Lavagens</h1>     
-            <Data name={washes.name}
-                    date={washes.date}
-                    price={washes.price}
-                    clientName={washes.clientName}/>
-        </div>
-    )
+    
+    if (file.length === 0){
+        return (
+            <div>
+                <div>
+                <h1 style={{margin: "100px 5% 0 6%", fontSize:"30px", color:"black"}}>Ultimas Lavagens</h1>           
+                </div> 
+                <h3 style={{margin: "20px 5% 0 6%",  color:"#565757"}}>Nenhum lançamento encontrado</h3>
+            </div>
+        )
+    }else{
+
+        return(
+            <div>
+                <div>
+                <h1 style={{margin: "100px 5% 0 6%", fontSize:"30px", color:"black"}}>Ultimas Lavagens</h1>           
+                </div>  
+                
+                {file.map((washes) => 
+    
+                <Data name={washes.name}
+                        date={washes.date}
+                        price={washes.price}
+                        clientName={washes.clientName}
+                        />
+                )}
+            </div>
+        )
+    }   
 }
 
 

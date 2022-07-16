@@ -7,7 +7,7 @@ function Data(props) {
         <Fragment>
 
 
-        <div className="home">
+        <div className="home" style={{margin: "10px 0 0 0"}}>
             
             <div className="lastService" style={{display:"flex", justifyContent:"space-around"}}>
                 <div className="lastService1">
