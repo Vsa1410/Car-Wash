@@ -1,11 +1,12 @@
 import React from "react";
 import { Fragment,useState } from "react";
-import Sucess from "./sent";
+import axios from "axios";
+
+const baseURL = "https://car-wash-back.herokuapp.com/add"
 
 
-
-export const file = []
 function Form(props){
+    
     const initialState = {
         name:'',
         date:'',
@@ -30,7 +31,18 @@ function Form(props){
         que fará a conferencia se os item foram salvos ou não 
         no Backend*/    
         event.preventDefault()
-        file.push(fields)
+        
+        axios
+        .post(baseURL,{
+            name: fields.name,
+            date: fields.date,
+            clientName:fields.clientName,
+            servicePrice:fields.price,
+            servicePaid: fields.paid
+        })
+        .then((response)=>{
+            console.log("enviado")
+        })
         
         setFields(initialState)
         
@@ -39,6 +51,7 @@ function Form(props){
         
         
     }
+    
     
     return(
         <Fragment>

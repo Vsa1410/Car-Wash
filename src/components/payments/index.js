@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Data from "./data";
 
 
 
 
-let file = []
+
 
 
 
 function Payments(){
-
+    const[ filex, setFile] = useState([])
+    let file = filex
     async function getData(){
         let response = await fetch ('https://car-wash-back.herokuapp.com/washes')
         let data = await response.json()
         console.log(data)
         console.log("Ok")
-        file.push(data)
+       
+
+
+        let newFiles = []
+
+        let files = newFiles.concat(data)
+        files.push(data)
+        setFile(files)
+        
         
     }
     getData()
