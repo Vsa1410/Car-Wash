@@ -12,7 +12,7 @@ function Payments(){
 
     async function getData(){
         let response = await fetch ('https://car-wash-back.herokuapp.com/washes')
-        let data = await response.json
+        let data = await response.json()
         console.log(data)
         console.log("Ok")
         file.push(data)
