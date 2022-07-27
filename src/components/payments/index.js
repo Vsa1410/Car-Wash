@@ -53,6 +53,10 @@ function Payments(){
                         clientName={washes.clientName}
                         />
                 )}
+
+                <div style={{height:"150px"}}>
+
+                </div>
             </div>
         )
     }   
