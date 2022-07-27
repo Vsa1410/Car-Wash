@@ -1,11 +1,24 @@
 import React from "react";
 import Data from "./data";
-import { file } from "../addNew/form";
+
+
+
+
+let file = []
 
 
 
 function Payments(){
-    
+
+    async function getData(){
+        let response = await fetch ('https://car-wash-back.herokuapp.com/washes')
+        let data = await response.json
+        console.log(data)
+        console.log("Ok")
+        file.push(data)
+        
+    }
+    getData()
     if (file.length === 0){
         return (
             <div>
@@ -27,7 +40,7 @@ function Payments(){
     
                 <Data name={washes.name}
                         date={washes.date}
-                        price={washes.price}
+                        price={washes.servicePrice}
                         clientName={washes.clientName}
                         />
                 )}
