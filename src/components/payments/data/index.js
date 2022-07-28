@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import "./index.css"
-import axios from "axios";
+const axios = require('axios')
 
 const baseURL = "https://car-wash-back.herokuapp.com/"
 
@@ -10,10 +10,17 @@ const baseURL = "https://car-wash-back.herokuapp.com/"
 
 function Data(props) {
     async function deletePayment(payment){
-        let payments2= {_id: payment}
+      
         
+        const requestOptions={
+
+            headers: { 
+                'Authorization': 'Bearer my-token',
+                'My-Custom-Header': 'foobar'
+        }}
        try{ 
-        await axios.delete(baseURL, payments2 );
+        await axios.delete(baseURL, payment, requestOptions );
+        
         
     }
     catch(err){
