@@ -9,8 +9,7 @@ import Data from "./data";
 
 
 function Payments(){
-    const[ filex, setFile] = useState([])
-    let file = filex
+    
     async function getData(){
         let response = await fetch ('https://car-wash-back.herokuapp.com/washes')
         let data = await response.json()
@@ -27,7 +26,17 @@ function Payments(){
         
         
     }
+
+
+
+
+
+    
+
+
     getData()
+    const[ filex, setFile] = useState([])
+    let file = filex
     if (file.length === 0){
         return (
             <div>
@@ -45,12 +54,15 @@ function Payments(){
                 <h1 style={{margin: "100px 5% 0 6%", fontSize:"30px", color:"black"}}>Ultimas Lavagens</h1>           
                 </div>  
                 
-                {file.map((washes) => 
+                {file.map((washes, index) => 
     
-                <Data name={washes.name}
+                <Data 
+                        key={index}
+                        name={washes.name}
                         date={washes.date}
                         price={washes.servicePrice}
                         clientName={washes.clientName}
+                        washId={washes._id}
                         />
                 )}
 

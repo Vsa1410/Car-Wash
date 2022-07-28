@@ -1,9 +1,23 @@
 import React, { Fragment } from "react";
 import "./index.css"
+import axios from "axios";
+
+const baseURL = "https://car-wash-back.herokuapp.com/delete"
+
+
 
 
 
 function Data(props) {
+    async function deletePayment(payment){
+       try{ 
+        await axios.delete(baseURL, payment );
+        
+    }
+    catch(err){
+        console.error(err);
+    }
+    }
     return(
         <Fragment>
 
@@ -24,7 +38,11 @@ function Data(props) {
                     <h5 style={{margin:0}}>{props.clientName}</h5>
 
                 </div>           
-
+                <div style={{display: "flex", alignContent: "center", cursor:"pointer"}}>
+                <button class="material-symbols-outlined" onClick={() => deletePayment(props.washId)}>
+                delete
+                </button>
+                </div>
             </div>
 
         </div>
