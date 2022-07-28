@@ -24,10 +24,12 @@ function Footer (){
             </span>
             </Link>
 
-
+            <Link to={"/saldo"}>
             <span class="material-symbols-outlined" style={{cursor:"pointer"}}>
             done
             </span>
+            </Link>
+            
             <span class="material-symbols-outlined" style={{cursor:"pointer"}}>
             person
             </span>

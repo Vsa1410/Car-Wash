@@ -13,6 +13,8 @@ import {
   BrowserRouter,
   Routes
 } from "react-router-dom";
+import AddNewUser from './components/addNewUser';
+import Saldo from './components/saldo';
 
 
 
@@ -24,6 +26,9 @@ function App() {
       <Route path="/" element={<Home/>} />
       <Route path="/payments" element={<Payments/>} />
       <Route path="/new" element={<AddNew/>} />
+      <Route path="/saldo" element={<Saldo/>}/>
+      <Route path="/addnewuser" element={<AddNewUser/>}/>
+
       
     </Routes>
     
