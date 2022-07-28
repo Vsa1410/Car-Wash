@@ -41,7 +41,7 @@ function UserData(props) {
         <div className="home" style={{margin: "10px 0 0 0", }}>
             
             <div style={{display:"flex", justifyContent:"space-around", borderColor: "#D9DDFB",borderRadius: "12px", borderWidth:"7px", backgroundColor:"#D9DDFB", borderStyle:"solid", margin:"10px 10% 10px 10%"}}>
-                <div className="lastService1">
+                <div className="lastService1" style={{display:"flex"}}>
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:0}}>Nome Lavador</p>
                     <h3 style={{margin:"0"}}>{props.name}</h3>
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:0}}>Saldo</p>

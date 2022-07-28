@@ -51,7 +51,7 @@ function Saldo(){
                 </div> 
                 <h3 style={{margin: "20px 5% 0 6%",  color:"#565757"}}>Nenhum lançamento encontrado</h3>
                 <Link to={"/addnewuser"}>
-                    <Fab color="primary" style={{position:"absolute", right:"100px", bottom:"100px"}} aria-label="add" Linkto="addnewuser">
+                    <Fab color="primary" style={{position:"absolute", right:"50px", bottom:"100px"}} aria-label="add" Linkto="addnewuser">
                         <AddIcon />
                     </Fab>
                     </Link>
@@ -69,7 +69,7 @@ function Saldo(){
     
                 <UserData key={index}
                         name={washes.name}
-                        saldo={washes.value}
+                        value={washes.value}
                         washId={washes._id}
                         />
                 )}
@@ -77,7 +77,7 @@ function Saldo(){
                 <div style={{height:"150px"}}>
 
                 </div>
-                <div style={{position:"absolute", right:"100px", bottom:"100px"}}>
+                <div style={{position:"absolute", right:"50px", bottom:"100px"}}>
                     <Link to={"/addnewuser"}>
                     <Fab color="primary" aria-label="add" Linkto="addnewuser">
                         <AddIcon />
