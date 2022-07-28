@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import "./index.css"
 import axios from "axios";
 
-const baseURL = "https://car-wash-back.herokuapp.com/delete"
+const baseURL = "https://car-wash-back.herokuapp.com/"
 
 
 
@@ -10,8 +10,10 @@ const baseURL = "https://car-wash-back.herokuapp.com/delete"
 
 function Data(props) {
     async function deletePayment(payment){
+        let payments2= {_id: payment}
+        
        try{ 
-        await axios.delete(baseURL, payment );
+        await axios.delete(baseURL, payments2 );
         
     }
     catch(err){

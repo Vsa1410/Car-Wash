@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Data from "./data";
 
 
@@ -11,7 +11,7 @@ import Data from "./data";
 function Payments(){
     
     async function getData(){
-        let response = await fetch ('https://car-wash-back.herokuapp.com/washes')
+        let response = await fetch ('https://car-wash-back.herokuapp.com/')
         let data = await response.json()
         console.log(data)
         console.log("Ok")
