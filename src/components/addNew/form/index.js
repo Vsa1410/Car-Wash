@@ -33,7 +33,7 @@ function Form(props){
     getData()
     const[ filex, setFile] = useState([])
     let file = filex
-    console.log(file)
+    
     
     
     const initialState = {
@@ -47,6 +47,7 @@ function Form(props){
     const [sent, setSent] = useState()
     const [bttPH, setbttPH] = useState("Enviar")
     const [fields, setFields] = useState(initialState)
+    
     const handleFieldsChange = (event) => setFields ({
         ...fields,
         [event.currentTarget.name]: event.currentTarget.value
@@ -54,14 +55,20 @@ function Form(props){
     
     const [names, setName]= useState("")
     function handleChange(event) { 
-    setName([event.target.value])
-
+    setName(event.target.value)
+    console.log(names)
+    
+    
     }
     
+
+    
+    
     const handleSubmit = event => {
-        setbttPH("Enviado")
         
-        setSent("Item adiciondado com sucesso!")
+        console.log(names)
+        
+        
         /* As duas linhas devem ser enviadas depois para outra função
         que fará a conferencia se os item foram salvos ou não 
         no Backend*/    
@@ -77,6 +84,11 @@ function Form(props){
         })
         .then((response)=>{
             console.log("enviado")
+            setSent("Item adiciondado com sucesso!")
+            setbttPH("Enviado")
+        })
+        .catch((err) =>{
+            setSent("Item ainda não adicionado")
         })
         
         setFields(initialState)
@@ -102,9 +114,9 @@ function Form(props){
             <p style={{color: "rgb(54, 3, 13)", fontSize: "15px",margin: "0  0  0 6%"}}>Nome do lavador*</p>
 
             <div>
-                <select onChange={handleChange} name="fruits" id="fruit-select" style={{margin:"0 0 0 6%"}}>
+                <select onChange={handleFieldsChange} name="name" id="fruit-select" style={{margin:"0 0 0 6%"}}>
                     {file.map((option, index) => (
-                    <option key={option.id} value={option.id}>
+                    <option key={option.id} value={option._id}>
                         {option.name}
                     </option>
                     ))}
