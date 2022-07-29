@@ -31,18 +31,11 @@ function Saldo(){
         
         
     }
-
-
-
-
-
-    
-
-
+ 
     getData()
     const[ filex, setFile] = useState([])
     let file = filex
-    
+
     if (file.length === 0){
         return (
             <div>

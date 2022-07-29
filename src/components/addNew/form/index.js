@@ -1,14 +1,43 @@
-import React from "react";
+import * as React from "react";
 import { Fragment,useState } from "react";
 import axios from "axios";
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
-const baseURL = "https://car-wash-back.herokuapp.com/add"
+
+
+
 
 
 function Form(props){
+
+    async function getData(){
+        let response = await fetch ('https://car-wash-back.herokuapp.com/receiveusers')
+        let data = await response.json()
+        
+       
+    
+    
+        let newFiles = []
+    
+        let files = newFiles.concat(data)
+        files.push(data)
+        setFile(files)
+        
+        
+    }
+    
+    getData()
+    const[ filex, setFile] = useState([])
+    let file = filex
+    console.log(file)
+    
     
     const initialState = {
-        name:'',
+        
         date:'',
         clientName:'',
         price:'',
@@ -22,7 +51,13 @@ function Form(props){
         ...fields,
         [event.currentTarget.name]: event.currentTarget.value
         });
+    
+    const [names, setName]= useState("")
+    function handleChange(event) { 
+    setName([event.target.value])
 
+    }
+    
     const handleSubmit = event => {
         setbttPH("Enviado")
         
@@ -31,10 +66,10 @@ function Form(props){
         que fará a conferencia se os item foram salvos ou não 
         no Backend*/    
         event.preventDefault()
-        
+        const baseURL = "https://car-wash-back.herokuapp.com/add"
         axios
         .post(baseURL,{
-            name: fields.name,
+            name: names,
             date: fields.date,
             clientName:fields.clientName,
             servicePrice:fields.price,
@@ -51,8 +86,6 @@ function Form(props){
         
         
     }
-    
-    
     return(
         <Fragment>
             
@@ -64,8 +97,21 @@ function Form(props){
             <h3 style={{margin: "0 5% 30px 6%", fontSize:"30px"}}>Nova lavagem</h3>
 
             <form onSubmit={handleSubmit}>
+
+
             <p style={{color: "rgb(54, 3, 13)", fontSize: "15px",margin: "0  0  0 6%"}}>Nome do lavador*</p>
-            <input type={"text"} className="input-itens" name="name" value={fields.name} onChange={handleFieldsChange}  required/>
+
+            <div>
+                <select onChange={handleChange} name="fruits" id="fruit-select" style={{margin:"0 0 0 6%"}}>
+                    {file.map((option, index) => (
+                    <option key={option.id} value={option.id}>
+                        {option.name}
+                    </option>
+                    ))}
+                </select>
+            </div>
+
+            
             <p style={{color: "rgb(54, 3, 13)", fontSize: "15px",margin: "0  0  0 6%"}}>Data*</p>
             <input type={"date"} className="input-itens" name="date" value={fields.date} onChange={handleFieldsChange}  required/>
             <p style={{color: "rgb(54, 3, 13)", fontSize: "15px",margin: "0  0  0 6%"}}>Nome do Cliente*</p>

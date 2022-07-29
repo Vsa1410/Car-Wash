@@ -18,7 +18,7 @@ const axios = require('axios')
 
 function UserData(props) {
     async function deletePayment(payment){
-        const baseURL = `https://car-wash-back.herokuapp.com/${payment}`
+        const baseURL = `https://car-wash-back.herokuapp.com/deleteuser/${payment}`
         
         const requestOptions={
 
