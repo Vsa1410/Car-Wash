@@ -54,11 +54,12 @@ function Form(props){
         });
     
     const [names, setName]= useState("")
-    function handleChange(event) { 
-    setName(event.target.value)
-    console.log(names)
-    
-    
+    const handleChange = (event) => {
+        const index = event.target.selectedIndex;
+        const optionElement = event.target.childNodes[index];
+        const optionElementId = optionElement.getAttribute('value');
+        setName(optionElementId)
+        console.log(names);
     }
     
 
@@ -73,10 +74,10 @@ function Form(props){
         que fará a conferencia se os item foram salvos ou não 
         no Backend*/    
         event.preventDefault()
-        const baseURL = "https://car-wash-back.herokuapp.com/add"
+        const baseURL = "http://localhost:3001/add"
         axios
         .post(baseURL,{
-            name: names,
+            serviceName: names,
             date: fields.date,
             clientName:fields.clientName,
             servicePrice:fields.price,
@@ -86,15 +87,22 @@ function Form(props){
             console.log("enviado")
             setSent("Item adiciondado com sucesso!")
             setbttPH("Enviado")
+            console.log(response)
         })
         .catch((err) =>{
             setSent("Item ainda não adicionado")
+            console.log(err)
         })
         
         setFields(initialState)
         
-        
-        
+       /* try {axios
+        .patch(`http://localhost:3001/${id}`,{
+            value: fields.value*0.8 
+        })}catch(err){
+            console.log(err)
+        }
+        */
         
         
     }
@@ -114,10 +122,10 @@ function Form(props){
             <p style={{color: "rgb(54, 3, 13)", fontSize: "15px",margin: "0  0  0 6%"}}>Nome do lavador*</p>
 
             <div>
-                <select onChange={handleFieldsChange} name="name" id="fruit-select" style={{margin:"0 0 0 6%"}}>
+                <select onChange={handleChange} name="name" id="fruit-select" style={{margin:"0 0 0 6%"}}>
                     {file.map((option, index) => (
-                    <option key={option.id} value={option._id}>
-                        {option.name}
+                    <option key={option._id} value={option._id}>
+                        {option.userName}
                     </option>
                     ))}
                 </select>

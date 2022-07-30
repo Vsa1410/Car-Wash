@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Data from "./data";
-import ReactDOM from 'react-dom';
-import Button from '@mui/material/Button';
+
+
+
 
 
 
@@ -11,9 +12,9 @@ import Button from '@mui/material/Button';
 
 
 function Payments(){
-    
+    const[ filex, setFile] = useState([])
     async function getData(){
-        let response = await fetch ('https://car-wash-back.herokuapp.com/')
+        let response = await fetch ('http://localhost:3001')
         let data = await response.json()
         
        
@@ -28,16 +29,21 @@ function Payments(){
         
     }
 
-
-
-
-
     
-
-
     getData()
-    const[ filex, setFile] = useState([])
+    
     let file = filex
+    
+   
+    
+    
+    
+    
+        
+  
+
+  
+    
     
     if (file.length === 0){
         return (
@@ -56,26 +62,22 @@ function Payments(){
                 <h1 style={{margin: "100px 5% 0 6%", fontSize:"30px", color:"black"}}>Ultimas Lavagens</h1>           
                 </div>  
                 
-                {file.map((washes, index) => 
-    
-                <Data 
-                        key={index}
-                        name={washes.name}
-                        date={washes.date}
-                        price={washes.servicePrice}
-                        clientName={washes.clientName}
-                        washId={washes._id}
-                        />
-                )}
+                {file.map((washes, index) => (
 
-                <div style={{height:"150px"}}>
+                    <Data 
+                    key={index}
+                    name={washes.serviceName.userName}
+                    date={washes.date}
+                    value={washes.value}
+                    clientName={washes.clientName}
+                    washId={washes._id}
 
-                </div>
-            </div>
+                    />))}
+                
+                    <div style={{height:"150px"}}>
+        
+                    </div>
+                    </div>
         )
-    }   
-}
-
-
-
+    }}
 export default Payments

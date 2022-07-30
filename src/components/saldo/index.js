@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 function Saldo(){
     
     async function getData(){
-        let response = await fetch ('https://car-wash-back.herokuapp.com/receiveusers')
+        let response = await fetch ('http://localhost:3001/receiveusers')
         let data = await response.json()
         
        
