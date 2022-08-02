@@ -3,6 +3,7 @@ import  { Fragment } from "react";
 import Button from '@mui/material/Button';
 import ReactDOM from 'react-dom';
 import { width } from '@mui/system';
+import Paper from '@mui/material/Paper';
 
 const axios = require('axios')
 
@@ -40,13 +41,13 @@ function UserData(props) {
 
 
         <div className="home" style={{margin: "10px 0 0 0", }}>
-            
-            <div style={{display:"flex", justifyContent:"space-around", borderColor: "#D9DDFB",borderRadius: "12px", borderWidth:"7px", backgroundColor:"#D9DDFB", borderStyle:"solid", margin:"10px 10% 10px 10%"}}>
-                <div className="lastService1" style={{display:"flex", justifyContent:"space-around", width:"70%"}}>
+            <Paper elevation={7} style={{backgroundColor:"#D9DDFB",borderColor: "#D9DDFB",borderRadius: "12px", borderWidth:"7px",margin:"10px 5% 30px 5%", height:"50px"}}>
+            <div style={{display:"flex", justifyContent:"space-around", borderColor: "#D9DDFB",borderRadius: "12px", borderWidth:"7px", backgroundColor:"#D9DDFB", borderStyle:"solid", margin:"10px 10% 10px 0"}}>
+                <div className="lastService1" style={{display:"flex", justifyContent:"space-evenly", width:"100%"}}>
                     <div>
 
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:0}}>Nome Lavador</p>
-                    <h3 style={{margin:"0"}}>{props.name}</h3>
+                    <h3 style={{margin:"0 10px 0 0"}}>{props.name}</h3>
                     </div>
 
                     <div>
@@ -61,7 +62,7 @@ function UserData(props) {
                 </Button>
                 </div>
             </div>
-
+        </Paper>
         </div>
         </Fragment>
     )

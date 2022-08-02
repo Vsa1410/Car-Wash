@@ -63,7 +63,7 @@ function Saldo(){
                 <div style={{height:"150px"}}>
 
                 </div>
-                <div style={{position:"absolute", right:"50px", bottom:"100px"}}>
+                <div style={{position:"fixed", right:"30px", bottom:"100px"}}>
                     <Link to={"/addnewuser"}>
                     <Fab color="primary" aria-label="add" Linkto="addnewuser">
                         <AddIcon />

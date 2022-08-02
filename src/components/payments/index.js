@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Data from "./data";
+const dayjs = require('dayjs')
+
 
 
 
@@ -59,7 +61,7 @@ function Payments(){
                     key={index}
                     userName2={file[index].serviceName2.userName}
                     userName={file[index].serviceName.userName}
-                    date={washes.date}
+                    date={dayjs(washes.date).format('DD/MM/YYYY')}
                     value={`R$ ${washes.servicePrice}`}
                     clientName={washes.clientName}
                     washId={washes._id}
