@@ -17,8 +17,8 @@ const axios = require('axios')
 
 
 function UserData(props) {
-    async function deletePayment(payment){
-        const baseURL = `https://car-wash-back.herokuapp.com/deleteuser/${payment}`
+    async function deletePayment(user){
+        const baseURL = `https://car-wash-back.herokuapp.com/deleteuser/${user}`
         
         const requestOptions={
 
@@ -27,7 +27,7 @@ function UserData(props) {
                 'My-Custom-Header': 'foobar'
         }}
        try{ 
-        await axios.delete(baseURL, payment, requestOptions );
+        await axios.delete(baseURL, user, requestOptions );
         
         
     }
@@ -52,7 +52,7 @@ function UserData(props) {
                     <div>
 
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:0}}>Saldo</p>
-                    <h3 style={{margin:"0"}}>{`R$ ${props.value}`}</h3>
+                    <h3 style={{margin:"0"}}>R$ {props.value}</h3>
                     </div>
                 </div>           
                 <div style={{display: "flex", alignContent: "center", cursor:"pointer"}}>

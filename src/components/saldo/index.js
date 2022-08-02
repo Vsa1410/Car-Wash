@@ -15,32 +15,25 @@ import { Link } from "react-router-dom";
 
 
 function Saldo(){
-    
+    const [file, setFiles]= useState([])
     async function getData(){
-        let response = await fetch ('http://localhost:3001/receiveusers')
+        let response = await fetch ('https://car-wash-back.herokuapp.com/receiveusers')
         let data = await response.json()
-        
-       
-
-
-        let newFiles = []
-
-        let files = newFiles.concat(data)
-        files.push(data)
-        setFile(files)
+    
+        setFiles(data)
         
         
     }
- 
     getData()
-    const[ filex, setFile] = useState([])
-    let file = filex
+    useEffect(() => {
+        getData();
+    },[]);
 
     if (file.length === 0){
         return (
             <div>
                 <div>
-                <h1 style={{margin: "100px 5% 0 6%", fontSize:"30px", color:"black"}}></h1>           
+                <h1 style={{margin: "100px 5% 0 6%", fontSize:"30px", color:"black"}}>Cadastros</h1>           
                 </div> 
                 <h3 style={{margin: "20px 5% 0 6%",  color:"#565757"}}>Nenhum lançamento encontrado</h3>
                 <Link to={"/addnewuser"}>
@@ -61,7 +54,7 @@ function Saldo(){
                 {file.map((washes, index) => 
     
                 <UserData key={index}
-                        name={washes.name}
+                        name={washes.userName}
                         value={washes.value}
                         washId={washes._id}
                         />

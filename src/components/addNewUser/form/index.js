@@ -30,10 +30,10 @@ function NewUserForm(props){
         que fará a conferencia se os item foram salvos ou não 
         no Backend*/    
         event.preventDefault()
-        const baseURL = "http://localhost:3001/addnewuser"
+        const baseURL = "https://car-wash-back.herokuapp.com/addnewuser"
         axios
         .post(baseURL,{
-            name: fields.name,
+            userName: fields.name,
             value: fields.value
         })
         .then((response)=>{

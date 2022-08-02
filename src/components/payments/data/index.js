@@ -11,7 +11,7 @@ const axios = require('axios')
     function Data(props){
 
         async function deletePayment(payment){
-            const baseURL = `http://localhost:3001/${payment}`
+            const baseURL = `https://car-wash-back.herokuapp.com/${payment}`
             
             const requestOptions={
     
@@ -21,6 +21,7 @@ const axios = require('axios')
             }}
            try{ 
             await axios.delete(baseURL, payment, requestOptions );
+            
             
             
         }
@@ -33,18 +34,19 @@ const axios = require('axios')
         return(
             <div className="home" style={{margin: "10px 0 0 0", }}>
                         
-            <div style={{display:"flex", justifyContent:"space-around", borderColor: "#D9DDFB",borderRadius: "12px", borderWidth:"7px", backgroundColor:"#D9DDFB", borderStyle:"solid", margin:"10px 10% 10px 10%"}}>
+            <div style={{display:"flex", justifyContent:"space-around", borderColor: "#D9DDFB",borderRadius: "12px", borderWidth:"7px", backgroundColor:"#D9DDFB", borderStyle:"solid", margin:"10px 2% 10px 5%"}}>
                 <div className="lastService1">
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:0}}>Responsável pela Lavagem</p>
-                    <h3 style={{margin:"0"}}>{props.userName}</h3>
+                    <h4 style={{margin:"0"}}>{props.userName}</h4>
+                    <h4 style={{margin:"0"}}>{props.userName2}</h4>
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:"10px 0 0 0"}}>Data</p>
-                    <h4 style={{margin:0}}>{props.date}</h4>
+                    <h5 style={{margin:0}}>{props.date}</h5>
                 </div>
                 <div>
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:0}}>Valor</p>
                     <h3 style={{margin:"0"}}>{props.value}</h3>
                     <p style={{color: "rgb(54, 3, 13)", fontSize: "10px",margin:"10px 0 0 0"}}>Cliente</p>
-                    <h5 style={{margin:0}}>{props.clientName}</h5>
+                    <h4 style={{margin:0}}>{props.clientName}</h4>
 
                 </div>           
                 <div style={{display: "flex", alignContent: "center", cursor:"pointer"}}>
