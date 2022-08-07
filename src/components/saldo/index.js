@@ -6,6 +6,7 @@ import AddNewUser from "../addNewUser";
 import { Fab } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from "react-router-dom";
+import { url } from "../home";
 
 
 
@@ -17,7 +18,7 @@ import { Link } from "react-router-dom";
 function Saldo(){
     const [file, setFiles]= useState([])
     async function getData(){
-        let response = await fetch ('https://car-wash-back.herokuapp.com/receiveusers')
+        let response = await fetch (`${url}/user/receiveusers`)
         let data = await response.json()
     
         setFiles(data)

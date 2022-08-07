@@ -4,7 +4,7 @@ import Payments from "../payments";
 import AddNew from "../addNew";
 import { Link } from "react-router-dom";
 
-
+export const url = "http://192.168.2.104:3001"
 function Home() {
     
    

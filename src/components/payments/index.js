@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Data from "./data";
+import { url } from "../home";
 const dayjs = require('dayjs')
+
 
 
 
@@ -19,7 +21,7 @@ function Payments(){
 
     //Download data from server of services
     async function getData(){
-        let response = await fetch ('https://car-wash-back.herokuapp.com/')
+        let response = await fetch (`${url}/services/receiveServices`)
         let data = await response.json()
         
         

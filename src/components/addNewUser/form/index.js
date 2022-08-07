@@ -3,6 +3,7 @@ import { Fragment,useState } from "react";
 import axios from "axios";
 import TextField from '@mui/material/TextField';
 import ReactDOM from 'react-dom';
+import { url } from "../../home";
 
 
 
@@ -30,7 +31,7 @@ function NewUserForm(props){
         que fará a conferencia se os item foram salvos ou não 
         no Backend*/    
         event.preventDefault()
-        const baseURL = "https://car-wash-back.herokuapp.com/addnewuser"
+        const baseURL = `${url}/user/addnew`
         axios
         .post(baseURL,{
             userName: fields.name,

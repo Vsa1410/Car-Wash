@@ -6,7 +6,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { DEFAULT_MODE_STORAGE_KEY } from "@mui/system/cssVars/getInitColorSchemeScript";
+import { url } from "../../home";
+
 
 
 
@@ -16,7 +17,7 @@ import { DEFAULT_MODE_STORAGE_KEY } from "@mui/system/cssVars/getInitColorScheme
 function Form(props){
     const[ file, setFile] = useState([])
     async function getData(){
-        let response = await fetch ('https://car-wash-back.herokuapp.com/receiveusers')
+        let response = await fetch (`${url}/user/receiveusers`)
         let data = await response.json()
         
 
@@ -103,7 +104,7 @@ function Form(props){
         
         console.log(file)
         
-        const baseURL = "https://car-wash-back.herokuapp.com/add"     //add new service to the server
+        const baseURL = `${url}/services/add `    //add new service to the server
         axios
         .post(baseURL,{
             serviceName: names,
@@ -124,9 +125,9 @@ function Form(props){
             console.log(err)
         })
         axios
-        //The link is catch by servcerside and change the old value to the new value
+        //The link is catch by servcerside and change the old balance to the new value
 
-            .patch(`https://car-wash-back.herokuapp.com/${file[numberKey]._id}`,{
+            .patch(`${url}/user/${file[numberKey]._id}`,{
                 value: realValue
                 
             })
@@ -135,7 +136,7 @@ function Form(props){
          axios
         //The link is catch by servcerside and change the old value to the new value in second person
 
-            .patch(`https://car-wash-back.herokuapp.com/user2/${file[numberKey2]._id}`,{
+            .patch(`${url}/user/user2/${file[numberKey2]._id}`,{
                 value: realValue
                 
             })

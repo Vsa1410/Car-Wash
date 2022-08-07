@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Button from '@mui/material/Button';
 import "./index.css"
 import Paper from '@mui/material/Paper';
+import { url } from "../../home";
 const axios = require('axios')
 const dayjs = require('dayjs')
 
@@ -13,16 +14,10 @@ const dayjs = require('dayjs')
     function Data(props){
 
         async function deletePayment(payment){
-            const baseURL = `https://car-wash-back.herokuapp.com/${payment}`
+            const baseURL = `${url}/services/${payment}` //delete a service from dataBase
             
-            const requestOptions={
-    
-                headers: { 
-                    'Authorization': 'Bearer my-token',
-                    'My-Custom-Header': 'foobar'
-            }}
            try{ 
-            await axios.delete(baseURL, payment, requestOptions );
+            await axios.delete(baseURL, payment );
             
             
             

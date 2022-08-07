@@ -4,8 +4,9 @@ import Button from '@mui/material/Button';
 import ReactDOM from 'react-dom';
 import { width } from '@mui/system';
 import Paper from '@mui/material/Paper';
+import { url } from '../../home';
 
-const axios = require('axios')
+const axios = require('axios') 
 
 
 
@@ -19,7 +20,7 @@ const axios = require('axios')
 
 function UserData(props) {
     async function deletePayment(user){
-        const baseURL = `https://car-wash-back.herokuapp.com/deleteuser/${user}`
+        const baseURL = `${url}/user/${user}`
         
         const requestOptions={
 
